@@ -25,7 +25,7 @@ MIT License
 
 ![alt app-demo-gif](walkthrough.mp4)
 
-https://github.com/kirti18patel/social-network-api/blob/main/walkthrough.mp4
+https://raw.githubusercontent.com/kirti18patel/social-network-api/main/walkthrough.mp4
 
 ## Tools
 * Node.js
