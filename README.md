@@ -22,7 +22,10 @@ To connect to the application on their local host address, the user must clone t
 MIT License
 
 ## Preview
-https://drive.google.com/file/d/1YFakEzLQdYjLJlDDIC3nuwuF4ddInDGS/view
+
+![alt app-demo-gif](walkthrough.mp4)
+
+https://github.com/kirti18patel/social-network-api/blob/main/walkthrough.mp4
 
 ## Tools
 * Node.js
