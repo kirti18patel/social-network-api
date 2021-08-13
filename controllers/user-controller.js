@@ -34,11 +34,11 @@ const userController = {
             res.status(404).json({ message: 'No user found with this id!' });
             return;
             }
-            res.json(dbUserData);
+            res.json({message: "User and associated thoughts deleted"});
         })
         .catch(err => res.status(400).json(err));
     },
-    
+
     updateUser({ params, body }, res) {
         User.findOneAndUpdate({ _id: params.id }, body, { new: true })
           .then(dbUserData => {
