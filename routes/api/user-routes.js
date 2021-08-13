@@ -1,5 +1,11 @@
 const router = require('express').Router();
-const {addUser, getUser, getUserById, deleteUser, updateUser} = require('../../controllers/user-controller');
+const {addUser, 
+    getUser, 
+    getUserById, 
+    deleteUser, 
+    updateUser,
+    addFriend,
+    removeFriend } = require('../../controllers/user-controller');
 
 router
   .route('/')
@@ -11,6 +17,11 @@ router
 .get(getUserById)
 .put(updateUser)
 .delete(deleteUser);
+
+router
+.route('/:userId/friends/:friendId')
+.post(addFriend)
+.delete(removeFriend);
 
 module.exports = router;
   
