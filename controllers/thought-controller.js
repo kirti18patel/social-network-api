@@ -53,7 +53,7 @@ const thoughtController = {
 
     addReaction({ params, body }, res) {
         Thought.findOneAndUpdate(
-        { _id: params.id },
+        { _id: params.thoughtId },
         { $push: { reactions: body } },
         { new: true, runValidators: true }
         )
@@ -65,6 +65,16 @@ const thoughtController = {
             res.json(dbReactionData);
         })
         .catch(err => res.json(err));
+    },
+
+    deleteReaction({ params }, res) {
+        Thought.findOneAndUpdate(
+            { _id: params.thoughtId },
+            { $pull: { replies: { replyId: params.replyId } } },
+            { new: true }
+          )
+            .then(dbPizzaData => res.json(dbPizzaData))
+            .catch(err => res.json(err));
     }
   }
 

@@ -4,18 +4,18 @@ const dateFormat = require('../utils/dateFormat');
 const ReactionSchema = new Schema(
   {
     // set custom id to avoid confusion with parent comment _id
-    replyId: {
+    reactionId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId()
     },
-    replyBody: {
-      type: String,
-      required: true
-    },
-    writtenBy: {
+    reactionBody: {
       type: String,
       required: true,
-      trim: true
+      maxLength: [280, 'thoughts exceeded limit: 280']
+    },
+    username: {
+      type: String,
+      required: true
     },
     createdAt: {
       type: Date,
@@ -35,7 +35,6 @@ const ThoughtSchema = new Schema(
     thoughtText: {
       type: String,
       required: true,
-      minLength: [1, 'you must enter your thoughts'],
       maxLength: [280, 'thoughts exceeded limit: 280']
     },
     createdAt: {
